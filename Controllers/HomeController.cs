@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using SecurityDemo.Data;
 using SecurityDemo.Models;
 using SecurityDemo.Repositories;
 using System.Diagnostics;
@@ -12,19 +13,22 @@ namespace SecurityDemo.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IConfiguration _configuration;
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly ApplicationDbContext _context;
 
 
-        public HomeController(ILogger<HomeController> logger, IConfiguration configuration, UserManager<IdentityUser> userManager)
+
+        public HomeController(ILogger<HomeController> logger, IConfiguration configuration, UserManager<IdentityUser> userManager,ApplicationDbContext context)
         {
             _logger = logger;
             _configuration = configuration;
             _userManager = userManager;
+            _context = context;
         }
 
         [Authorize]
         public IActionResult InjectionDemo(string message = "")
         {
-            SqlDbRepository sqlDbRepository = new SqlDbRepository(_configuration);
+            SqlDbRepository sqlDbRepository = new SqlDbRepository(_configuration,_context);
             List<string> cities = sqlDbRepository.GetCities(out string returnMessage);
 
             ViewData["Message"] = $"{message}{returnMessage}";
@@ -40,7 +44,7 @@ namespace SecurityDemo.Controllers
                 return RedirectToAction("InjectionDemo", new { message = "Please select a city." });
             }
 
-            SqlDbRepository sqlDbRepository = new SqlDbRepository(_configuration);
+            SqlDbRepository sqlDbRepository = new SqlDbRepository(_configuration,_context);
 
             string cityName = sqlDbRepository.GetCityName(cityId);
             List<string> cityBuildings = new List<string> { cityName };
@@ -73,7 +77,7 @@ namespace SecurityDemo.Controllers
 
             if (roles.Contains("Admin"))
             {
-                SqlDbRepository sqlDbRepository = new SqlDbRepository(_configuration);
+                SqlDbRepository sqlDbRepository = new SqlDbRepository(_configuration, _context);
                 List<string> registeredUsers = sqlDbRepository.GetRegisteredUsers();
 
                 return View(registeredUsers);
@@ -91,7 +95,7 @@ namespace SecurityDemo.Controllers
         [Authorize]
         public ActionResult Products()
         {
-            SqlDbRepository sqlDbRepository = new SqlDbRepository(_configuration);
+            SqlDbRepository sqlDbRepository = new SqlDbRepository(_configuration,_context);
             List<ProductVM> products = sqlDbRepository.GetProducts();
 
             return View(products);
@@ -100,7 +104,7 @@ namespace SecurityDemo.Controllers
         [Authorize]
         public ActionResult DisplayProduct(string prodID)
         {
-            SqlDbRepository sqlDbRepository = new SqlDbRepository(_configuration);
+            SqlDbRepository sqlDbRepository = new SqlDbRepository(_configuration, _context);
             ProductVM product = sqlDbRepository.GetProduct(prodID);
 
             return View(product);

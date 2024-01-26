@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SecurityDemo.Models;
+using System.Collections.Generic;
 
 namespace SecurityDemo.Data
 {
@@ -15,6 +16,7 @@ namespace SecurityDemo.Data
         public DbSet<Building> Buildings { get; set; }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<City> Cities { get; set; }
+        public DbSet<ProductVM> Products { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -168,6 +170,15 @@ namespace SecurityDemo.Data
                 new City { cityId = 4, cityName = "Calgary" },
                 new City { cityId = 5, cityName = "Surrey" }
             );
+
+            //modelBuilder.Entity<ProductVM>().HasData(    // Populate Cities
+            //new ProductVM { ProdID = "51", ProdName = "bike helmet", Price = 41.89m },
+            //new ProductVM { ProdID = "52", ProdName = "gloves", Price = 23.45m },
+            //new ProductVM { ProdID = "53", ProdName = "water bottle", Price = 17.23m }
+            //);
+
+     
+
 
             modelBuilder.Entity<Building>().HasData( // Populate Buildings
                 new Building { buildingId = 1, name = "Building A", cityId = 1 },

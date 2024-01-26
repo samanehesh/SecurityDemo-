@@ -11,8 +11,8 @@ using SecurityDemo.Data;
 namespace SecurityDemo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240124172902_initialCreate")]
-    partial class initialCreate
+    [Migration("20240124225453_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -151,13 +151,13 @@ namespace SecurityDemo.Migrations
                         {
                             Id = "admin-user-id",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "656810d5-414f-47c5-a299-e207e86b1f91",
+                            ConcurrencyStamp = "b91fe45c-c8ef-40dd-b646-2a2c9e5ffbb4",
                             Email = "admin@home.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@HOME.COM",
                             NormalizedUserName = "ADMIN@HOME.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEF4G0QAorXHy/rQGykTIXrUP2Vtz/7sQEKT2MeiYpNzppps3UDWDp3BYGZOG0FyMsg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMV6O+bsHpfpNa/7Ap1qivShmcWVMCdlf5ayrrmbO2SqRIyeQ2io0T8x4PNRgvzgHg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -167,13 +167,13 @@ namespace SecurityDemo.Migrations
                         {
                             Id = "mateo-user-id",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1425b32e-4e4e-4bf4-896e-cbfddcde0bd6",
+                            ConcurrencyStamp = "98f4f40a-91ae-4fe5-a9b7-b983e9eba007",
                             Email = "mateo@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MATEO@GMAIL.COM",
                             NormalizedUserName = "MATEO@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEGOpmA9k82YqhJvmMncEn96PMW2WniEFuv19PPcW9cWWbzg0YSolCsHK/WJ956EThQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMD6YseNYWttxO9AD116l6AKDymU34vf+GjyMYbENxQMfPyg5P0ZwMYzAbORhJQhDg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -183,13 +183,13 @@ namespace SecurityDemo.Migrations
                         {
                             Id = "priya-user-id",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c03b192f-569c-42c9-a799-cb999cb65bb9",
+                            ConcurrencyStamp = "7f42bca8-aa4b-401e-b616-64fb386eb6fc",
                             Email = "priya@yahoo.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "PRAYA@YAHOO.COM",
                             NormalizedUserName = "PRAYA@YAHOO.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEHAgSvtENApMawbUz6P+N1J3XzhhSjWM5jyhnGoIF9232h/2oibRFmTQNkVCVqfXeA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEGH2pKPa1p23kHos6i1zmpLZSVZN/P0viLKrhZmpN2cmAZL5Qd9h8Koh6ywtWKHHTA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -199,13 +199,13 @@ namespace SecurityDemo.Migrations
                         {
                             Id = "keiko-user-id",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "87be3d16-c8c8-4829-a693-4ff9d19e28f9",
+                            ConcurrencyStamp = "470c16d0-ba1b-4027-9108-b136b147b174",
                             Email = "keiko@Outlook.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "KEIKO@OUTLOOK.COM",
                             NormalizedUserName = "KEIKO@OUTLOOK.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEA/AwO52fBiWhyx1J5hW7VkQN4eYBhdm2qFCN1jH2fk7dyaYmZGKbipP0kY8Sw1NyQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEOqcfH3W6V5TjNdf0ucJ2XMuih3OJzIhcvyXVwNO2w3P+pkcnDev+TV+36lZ7y0LLw==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -215,13 +215,13 @@ namespace SecurityDemo.Migrations
                         {
                             Id = "kwame-user-id",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e45ed6ce-411f-49e2-9e4f-726175ae5704",
+                            ConcurrencyStamp = "8c89707d-7090-41b1-8c01-194ad66339be",
                             Email = "kwame@aol.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "KWAME@AOL.COM",
                             NormalizedUserName = "KWAME@AOL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEA/g53z7wTg6IelpmcmQAt4fSo4HBLOGFDqJ47m/OQH0LlyBev6y1lukanS/2M4XTg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEL3bRwSd56g9Io+SfLpzuXEfKbg1RBqGUuNTZC+Ipjs+2gtOfZbCfuqu9EEuvVunfw==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -460,6 +460,43 @@ namespace SecurityDemo.Migrations
                         {
                             cityId = 5,
                             cityName = "Surrey"
+                        });
+                });
+
+            modelBuilder.Entity("SecurityDemo.Models.ProductVM", b =>
+                {
+                    b.Property<string>("ProdID")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ProdName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ProdID");
+
+                    b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            ProdID = "51",
+                            Price = 41.89m,
+                            ProdName = "bike helmet"
+                        },
+                        new
+                        {
+                            ProdID = "52",
+                            Price = 23.45m,
+                            ProdName = "gloves"
+                        },
+                        new
+                        {
+                            ProdID = "53",
+                            Price = 17.23m,
+                            ProdName = "water bottle"
                         });
                 });
 

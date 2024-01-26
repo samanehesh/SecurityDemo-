@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SecurityDemo.Migrations
 {
     /// <inheritdoc />
-    public partial class initialCreate : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -63,6 +63,19 @@ namespace SecurityDemo.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Cities", x => x.cityId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Products",
+                columns: table => new
+                {
+                    ProdID = table.Column<string>(type: "TEXT", nullable: false),
+                    ProdName = table.Column<string>(type: "TEXT", nullable: false),
+                    Price = table.Column<decimal>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Products", x => x.ProdID);
                 });
 
             migrationBuilder.CreateTable(
@@ -226,11 +239,11 @@ namespace SecurityDemo.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "admin-user-id", 0, "656810d5-414f-47c5-a299-e207e86b1f91", "admin@home.com", true, false, null, "ADMIN@HOME.COM", "ADMIN@HOME.COM", "AQAAAAIAAYagAAAAEF4G0QAorXHy/rQGykTIXrUP2Vtz/7sQEKT2MeiYpNzppps3UDWDp3BYGZOG0FyMsg==", null, false, "", false, "admin@home.com" },
-                    { "keiko-user-id", 0, "87be3d16-c8c8-4829-a693-4ff9d19e28f9", "keiko@Outlook.com", true, false, null, "KEIKO@OUTLOOK.COM", "KEIKO@OUTLOOK.COM", "AQAAAAIAAYagAAAAEA/AwO52fBiWhyx1J5hW7VkQN4eYBhdm2qFCN1jH2fk7dyaYmZGKbipP0kY8Sw1NyQ==", null, false, "", false, "keiko@Outlook.com" },
-                    { "kwame-user-id", 0, "e45ed6ce-411f-49e2-9e4f-726175ae5704", "kwame@aol.com", true, false, null, "KWAME@AOL.COM", "KWAME@AOL.COM", "AQAAAAIAAYagAAAAEA/g53z7wTg6IelpmcmQAt4fSo4HBLOGFDqJ47m/OQH0LlyBev6y1lukanS/2M4XTg==", null, false, "", false, "kwame@aol.com" },
-                    { "mateo-user-id", 0, "1425b32e-4e4e-4bf4-896e-cbfddcde0bd6", "mateo@gmail.com", true, false, null, "MATEO@GMAIL.COM", "MATEO@GMAIL.COM", "AQAAAAIAAYagAAAAEGOpmA9k82YqhJvmMncEn96PMW2WniEFuv19PPcW9cWWbzg0YSolCsHK/WJ956EThQ==", null, false, "", false, "mateo@gmail.com" },
-                    { "priya-user-id", 0, "c03b192f-569c-42c9-a799-cb999cb65bb9", "priya@yahoo.com", true, false, null, "PRAYA@YAHOO.COM", "PRAYA@YAHOO.COM", "AQAAAAIAAYagAAAAEHAgSvtENApMawbUz6P+N1J3XzhhSjWM5jyhnGoIF9232h/2oibRFmTQNkVCVqfXeA==", null, false, "", false, "priya@yahoo.com" }
+                    { "admin-user-id", 0, "b91fe45c-c8ef-40dd-b646-2a2c9e5ffbb4", "admin@home.com", true, false, null, "ADMIN@HOME.COM", "ADMIN@HOME.COM", "AQAAAAIAAYagAAAAEMV6O+bsHpfpNa/7Ap1qivShmcWVMCdlf5ayrrmbO2SqRIyeQ2io0T8x4PNRgvzgHg==", null, false, "", false, "admin@home.com" },
+                    { "keiko-user-id", 0, "470c16d0-ba1b-4027-9108-b136b147b174", "keiko@Outlook.com", true, false, null, "KEIKO@OUTLOOK.COM", "KEIKO@OUTLOOK.COM", "AQAAAAIAAYagAAAAEOqcfH3W6V5TjNdf0ucJ2XMuih3OJzIhcvyXVwNO2w3P+pkcnDev+TV+36lZ7y0LLw==", null, false, "", false, "keiko@Outlook.com" },
+                    { "kwame-user-id", 0, "8c89707d-7090-41b1-8c01-194ad66339be", "kwame@aol.com", true, false, null, "KWAME@AOL.COM", "KWAME@AOL.COM", "AQAAAAIAAYagAAAAEL3bRwSd56g9Io+SfLpzuXEfKbg1RBqGUuNTZC+Ipjs+2gtOfZbCfuqu9EEuvVunfw==", null, false, "", false, "kwame@aol.com" },
+                    { "mateo-user-id", 0, "98f4f40a-91ae-4fe5-a9b7-b983e9eba007", "mateo@gmail.com", true, false, null, "MATEO@GMAIL.COM", "MATEO@GMAIL.COM", "AQAAAAIAAYagAAAAEMD6YseNYWttxO9AD116l6AKDymU34vf+GjyMYbENxQMfPyg5P0ZwMYzAbORhJQhDg==", null, false, "", false, "mateo@gmail.com" },
+                    { "priya-user-id", 0, "7f42bca8-aa4b-401e-b616-64fb386eb6fc", "priya@yahoo.com", true, false, null, "PRAYA@YAHOO.COM", "PRAYA@YAHOO.COM", "AQAAAAIAAYagAAAAEGH2pKPa1p23kHos6i1zmpLZSVZN/P0viLKrhZmpN2cmAZL5Qd9h8Koh6ywtWKHHTA==", null, false, "", false, "priya@yahoo.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -243,6 +256,16 @@ namespace SecurityDemo.Migrations
                     { 3, "Montreal" },
                     { 4, "Calgary" },
                     { 5, "Surrey" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "ProdID", "Price", "ProdName" },
+                values: new object[,]
+                {
+                    { "51", 41.89m, "bike helmet" },
+                    { "52", 23.45m, "gloves" },
+                    { "53", 17.23m, "water bottle" }
                 });
 
             migrationBuilder.InsertData(
@@ -367,6 +390,9 @@ namespace SecurityDemo.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Products");
 
             migrationBuilder.DropTable(
                 name: "Rooms");
