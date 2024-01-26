@@ -171,15 +171,6 @@ namespace SecurityDemo.Data
                 new City { cityId = 5, cityName = "Surrey" }
             );
 
-            //modelBuilder.Entity<ProductVM>().HasData(    // Populate Cities
-            //new ProductVM { ProdID = "51", ProdName = "bike helmet", Price = 41.89m },
-            //new ProductVM { ProdID = "52", ProdName = "gloves", Price = 23.45m },
-            //new ProductVM { ProdID = "53", ProdName = "water bottle", Price = 17.23m }
-            //);
-
-     
-
-
             modelBuilder.Entity<Building>().HasData( // Populate Buildings
                 new Building { buildingId = 1, name = "Building A", cityId = 1 },
                 new Building { buildingId = 2, name = "Building B", cityId = 5 },
@@ -217,7 +208,6 @@ namespace SecurityDemo.Data
                 new Room { roomId = 21, name = "Room 901", capacity = 20, buildingId = 10 }
             );
         }
-
 
     }
 }

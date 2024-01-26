@@ -110,30 +110,7 @@ namespace SecurityDemo.Repositories
                 {
                     list.Add($"{result.UserId},{result.UserName},{result.RoleId}");
                 }
-                //string connectionString = "Data Source=.\\wwwroot\\sql.db";
 
-                //using (SQLiteConnection connection = new SQLiteConnection(connectionString))
-                //{
-                //    connection.Open();
-
-                //    string sql = $"SELECT AspNetUsers.Id, AspNetUsers.UserName, " +
-                //                    $"AspNetUserRoles.RoleId FROM AspNetUsers INNER " +
-                //                    $"JOIN AspNetUserRoles ON AspNetUsers.Id = " +
-                //                    $"AspNetUserRoles.UserId INNER JOIN AspNetRoles " +
-                //                    $"ON AspNetUserRoles.RoleId = AspNetRoles.Id;";
-
-                //    using (SQLiteCommand cmd = new SQLiteCommand(sql, connection))
-                //    {
-                //        using (SQLiteDataReader reader = cmd.ExecuteReader())
-                //        {
-                //            while (reader.Read())
-                //            {
-                //                list.Add($"{reader.GetString(0)},{reader.GetString(1)}," +
-                //                            $"{reader.GetString(2)}");
-                //            }
-                //        }
-                //    }
-                //}
             }
             catch (Exception e)
             {
@@ -155,33 +132,8 @@ namespace SecurityDemo.Repositories
                          ProdID = p.ProdID,
                          ProdName = p.ProdName,
                          Price = p.Price,
-        // Include other properties from ProductVM based on your needs
                       }).ToList();
 
-                //string connectionString = "Data Source=.\\wwwroot\\sql.db";
-
-                //using (SQLiteConnection connection = new SQLiteConnection(connectionString))
-                //{
-                //    connection.Open();
-
-                //    string sql = $"SELECT * FROM Products";
-
-                //    using (SQLiteCommand cmd = new SQLiteCommand(sql, connection))
-                //    {
-                //        using (SQLiteDataReader reader = cmd.ExecuteReader())
-                //        {
-                //            while (reader.Read())
-                //            {
-                //                products.Add(new ProductVM
-                //                {
-                //                    ProdName = (string)reader["prodName"],
-                //                    ProdID = (string)reader["prodID"],
-                //                    Price = (decimal)reader["price"]
-                //                });
-                //            }
-                //        }
-                //    }
-                //}
             }
             catch (Exception e)
             {
@@ -198,31 +150,6 @@ namespace SecurityDemo.Repositories
             {
                 productVM = _context.Products.FirstOrDefault(p => p.ProdID == productID);
 
-                //string connectionString = "Data Source=.\\wwwroot\\sql.db";
-
-                //using (SQLiteConnection connection = new SQLiteConnection(connectionString))
-                //{
-                //    connection.Open();
-
-                //    string sql = $"SELECT * FROM products WHERE prodID= {productID}";
-
-                //    using (SQLiteCommand cmd = new SQLiteCommand(sql, connection))
-                //    {
-                //        using (SQLiteDataReader reader = cmd.ExecuteReader())
-                //        {
-                //            while (reader.Read())
-                //            {
-
-                //                productVM = new ProductVM
-                //                {
-                //                    ProdName = (string)reader["prodName"],
-                //                    ProdID = (string)reader["prodID"],
-                //                    Price = (decimal)reader["price"]
-                //                };
-                //            }
-                //        }
-                //    }
-                //}
             }
             catch (Exception e)
             {
